@@ -35,14 +35,16 @@ function getRandomPositiveInteger (a, b) {
     return Math.floor(result);
   }
 
-  function checkStringLength (string, length) {
-    return string.length <= length;
-  }
+  const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
   const createPic = (index) => ({
      id: index,
-     url:,
-     description:,
-     likes:,
-     comments:,
+     url:`photos/${index}.jpg`,
+     description:getRandomArrayElement(description),
+     likes:getRandomArrayElement(likesCount),
+     comments:getRandomArrayElement(commentLines),
   });
+
+  const similarWizards = Array.from({length: PICTURES__PHOTO}, createPic);
+
+  console.log(similarWizards);
