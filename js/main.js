@@ -1,14 +1,6 @@
 const PICTURES__PHOTO = 25;
 
-const likesCount = {
-    min: 15,
-    max: 200,
-}
 
-const commentLines = {
-    min: 0,
-    max: 200,
-}
 
 const description = [
     'Игра в футбол. #футбол',
@@ -41,10 +33,10 @@ function getRandomPositiveInteger (a, b) {
      id: index,
      url:`photos/${index}.jpg`,
      description:getRandomArrayElement(description),
-     likes:getRandomArrayElement(likesCount),
-     comments:getRandomArrayElement(commentLines),
+     likes:getRandomArrayElement(15, 200),
+     comments:getRandomArrayElement(0, 200),
   });
 
-  const similarWizards = Array.from({length: PICTURES__PHOTO}, createPic);
+  const createProject = Array.from({length: PICTURES__PHOTO}, createPic);
 
-  console.log(similarWizards);
+  console.log(createProject);
