@@ -38,5 +38,6 @@ function getRandomPositiveInteger (a, b) {
   });
 
   const createProject = Array.from({length: PICTURES__PHOTO}, createPic);
-
+  
   console.log(createProject);
+
