@@ -1,14 +1,16 @@
-
-
-import {similarProject} from './data.js';
-
-console.log(
-    similarProject()
-);
+import {getRandomArrayElement} from './util.js';
 
 const PICTURES__PHOTO = 25;
 
+const likesCount = {
+    min: 15,
+    max: 200,
+}
 
+const commentLines = {
+    min: 0,
+    max: 200,
+}
 
 const description = [
     'Игра в футбол. #футбол',
@@ -24,30 +26,16 @@ const description = [
 ]
 
 
-function getRandomPositiveInteger (a, b) {
-    if (a < 0 || b < 0) {
-      return NaN;
-    }
-    const lower = Math.ceil(Math.min(a, b));
-    const upper = Math.floor(Math.max(a, b));
 
-    const result = Math.random() * (upper - lower + 1) + lower;
-    return Math.floor(result);
-  }
-
-  const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
   const createPic = (index) => ({
      id: index,
      url:`photos/${index}.jpg`,
      description:getRandomArrayElement(description),
-     likes:getRandomArrayElement(15, 200),
-     comments:getRandomArrayElement(0, 200),
+     likes:getRandomArrayElement(likesCount),
+     comments:getRandomArrayElement(commentLines),
   });
 
-  const createProject = Array.from({length: PICTURES__PHOTO}, createPic);
-  
-  console.log(createProject);
+  const similarProject = Array.from({length: PICTURES__PHOTO}, createPic);
 
-
-
+  export {similarProject};
