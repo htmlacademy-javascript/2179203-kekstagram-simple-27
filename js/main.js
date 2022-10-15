@@ -1,3 +1,4 @@
+<<<<<< module4-task1
 const PICTURES__PHOTO = 25;
 
 
@@ -40,4 +41,5 @@ function getRandomPositiveInteger (a, b) {
   const createProject = Array.from({length: PICTURES__PHOTO}, createPic);
   
   console.log(createProject);
+
 
