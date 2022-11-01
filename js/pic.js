@@ -1,24 +1,28 @@
 import {similarProject} from './data.js';
 
 
-const projectsPicture = () => {
+
 const pictureTemplate = document.querySelector('#picture')
 .content
 .querySelector('.picture');
 
+
+const projectsPicture = () => {
 const pictureProject = similarProject();
 
-const picturesElement = document.querySelector('.pictures');
+
 const pictureListFragment = document.createDocumentFragment();
 
 pictureProject.forEach(({url, likes, comments}) => {
     const pictureElement = pictureTemplate.cloneNode(true);
-    pictureElement.querySelector('.picture__img').getAttribute('src', url);
+
+    pictureElement.querySelector('.picture__img').src = url;
     pictureElement.querySelector('.picture__likes').textContent = likes;
     pictureElement.querySelector('.picture__comments').textContent = comments;
-    pictureListFragment.appendChild(pictureElement);
+    pictureListFragment.append(pictureElement);
   });
   
-  picturesElement.appendChild(pictureListFragment);
+  document.querySelector('.pictures').append(pictureListFragment);
+
 };
   export {projectsPicture};

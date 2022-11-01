@@ -1,5 +1,4 @@
 
-
 function getRandomPositiveInteger (a, b) {
     if (a < 0 || b < 0) {
       return NaN;
@@ -11,6 +10,13 @@ function getRandomPositiveInteger (a, b) {
     return Math.floor(result);
   }
 
+  const checkStringLength = (string, length) => string.length <= length;
+
   const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
-  export {getRandomArrayElement};
+  const isEscapeKey = (evt) => evt.key === 'Escape';
+
+  export {getRandomArrayElement,getRandomPositiveInteger, checkStringLength, isEscapeKey};
+
+
+  
