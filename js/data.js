@@ -29,13 +29,16 @@ const description = [
 
 
   const createPic = (index) => ({
+
      id: index + 1,
      url:`photos/${index + 1}.jpg`,
+
      description:getRandomArrayElement(description),
      likes:getRandomArrayElement(likesCount),
      comments:getRandomArrayElement(commentLines),
   });
 
   const similarProject = Array.from({length: PICTURES__PHOTO},(_, index) => createPic(index));
+
 
   export {similarProject};
